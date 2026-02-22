@@ -1,74 +1,83 @@
-AI Based Early Detection of Child Malnutrition
-Overview
+#  AI-Based Early Detection of Child Malnutrition
 
-Child malnutrition remains a critical public health challenge, especially in developing regions. Early identification of moderate and severe malnutrition can significantly reduce long term health risks and improve intervention outcomes.
+##  Overview
 
-This project presents a machine learning based classification system that predicts the nutritional status of children using anthropometric health indicators.
+Child malnutrition remains a serious public health concern, especially in developing regions. Early detection of moderate and severe malnutrition is essential to prevent long-term health complications.
 
-Problem Statement
+This project implements a Machine Learning-based classification system that predicts the nutritional status of children using anthropometric health indicators.
 
-Manual screening methods may not always provide predictive insight into malnutrition risk. There is a need for a data driven system that can analyze measurable health parameters and accurately classify children into nutritional risk categories.
+---
 
-Dataset Description
+##  Problem Statement
 
-The dataset consists of 5000 individual child health records with the following features:
+Traditional screening methods rely heavily on manual assessment and may not always provide early predictive insights.  
 
-Age in months
+The objective of this project is to develop a data-driven system that analyzes measurable health parameters and accurately classifies children into:
 
-Weight in kilograms
+- **Normal**
+- **Moderate Malnutrition**
+- **Severe Malnutrition**
 
-Height in centimeters
+---
 
-Mid Upper Arm Circumference
+##  Dataset Description
 
-Body Mass Index
+The dataset contains **5000 individual child health records** with the following features:
 
-Nutrition status label
+- `age_months`
+- `weight_kg`
+- `height_cm`
+- `muac_cm`
+- `bmi`
+- `nutrition_status` (Target Variable)
 
 The target variable includes three classes:
 
-Normal
+- Normal  
+- Moderate  
+- Severe  
 
-Moderate
+---
 
-Severe
-
-Methodology
+##  Methodology
 
 The following steps were performed:
 
-Data loading and validation
+1. Data loading and validation  
+2. Label encoding of the target variable  
+3. Stratified train-test split (80% training, 20% testing)  
+4. Model training using **Random Forest Classifier**  
+5. Performance evaluation using:
+   - Accuracy Score
+   - Classification Report
+   - Confusion Matrix
+6. Feature Importance analysis  
 
-Label encoding of the target variable
+---
 
-Stratified train test split
+##  Model Performance
 
-Model training using Random Forest Classifier
+- **Accuracy:** 94.7%
 
-Performance evaluation using accuracy, classification report, and confusion matrix
+The confusion matrix demonstrates strong classification performance across all three categories.
 
-Feature importance analysis
+Feature importance analysis identified **Mid Upper Arm Circumference (MUAC)** as the most influential predictor of malnutrition risk.
 
-Model Performance
+---
 
-The Random Forest model achieved an accuracy of 94.7 percent on the test dataset.
+##  Technologies Used
 
-The confusion matrix indicates strong classification capability across all three nutritional categories. Feature importance analysis shows that Mid Upper Arm Circumference is the most significant predictor of malnutrition risk, which aligns with medical understanding.
+- Python  
+- Jupyter Notebook  
+- pandas  
+- matplotlib  
+- seaborn  
+- scikit-learn  
 
-Tools and Technologies
+---
 
-Python
+##  Conclusion
 
-Jupyter Notebook
+The developed model successfully classifies children into nutritional categories with high accuracy.  
 
-pandas
-
-matplotlib
-
-seaborn
-
-scikit learn
-
-Conclusion
-
-The developed model demonstrates that machine learning can effectively assist in early detection of child malnutrition. Such systems can support healthcare workers in prioritizing high risk cases and improving intervention strategies.
+This approach demonstrates how Machine Learning can support healthcare professionals in early screening and risk prioritization, enabling timely intervention strategies.
